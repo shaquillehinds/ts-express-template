@@ -2,7 +2,7 @@ import { config } from "dotenv";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import { NextFunction, Response } from "express";
-import User from "../../models/user/user";
+import User from "@models/user";
 import {
   CreateUserRequest,
   LoginUserRequest,

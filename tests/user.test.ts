@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 import { MongoMemoryServer } from "mongodb-memory-server";
 import app from "../src/app";
 const server = app.listen(8080, () => console.log("Testing on PORT 8080"));
-import User from "../src/models/user/user";
+import User from "../src/models/user";
 let mongoServer: MongoMemoryServer;
 
 beforeAll(async () => {

@@ -13,7 +13,7 @@
     "dev": "env NODE_ENV=development nodemon src/index.ts -L",
     "dev-prod": "env NODE_ENV=production nodemon src/index.ts -L",
     "prebuild": "rm -rf dist",
-    "build": "tsc -p ./",
+    "build": "tsc && tsc-alias",
     "start": "env NODE_ENV=production node dist/server.js",
     "test": "env NODE_ENV=test jest",
     "load:test": "artillery run artillery.yml"
@@ -45,6 +45,7 @@
     "supertest": "^6.3.3",
     "ts-jest": "^28.0.4",
     "ts-node": "^10.8.1",
+    "tsc-alias": "^1.8.8",
     "typescript": "^4.7.3"
   }
 }
