@@ -1,12 +1,11 @@
 {
   "name": "ts-express-template",
+  "author": "Shaquille Hinds",
   "version": "1.0.0",
   "description": "",
   "main": "dist/server.js",
   "keywords": [],
-  "author": "Shaquille Hinds",
   "license": "ISC",
-  "private": false,
   "directories": {
     "test": "tests"
   },
