@@ -10,8 +10,8 @@
     "test": "tests"
   },
   "scripts": {
-    "dev": "env NODE_ENV=development nodemon src/index.ts -L",
-    "dev-prod": "env NODE_ENV=production nodemon src/index.ts -L",
+    "dev": "env NODE_ENV=development nodemon src/server.ts -L",
+    "dev-prod": "env NODE_ENV=production nodemon src/server.ts -L",
     "prebuild": "rm -rf dist",
     "build": "tsc && tsc-alias",
     "start": "env NODE_ENV=production node dist/server.js",
