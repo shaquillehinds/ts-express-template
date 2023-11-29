@@ -1,0 +1,15 @@
+config:
+  target: "http://localhost:3000"
+  phases:
+    - duration: 6
+      arrivalRate: 2
+
+scenarios:
+  - name: "Login"
+    flow:
+      - post:
+          url: "/users"
+          json:
+            name: "Test"
+            email: "{{ $randomString() }}@example.com"
+            password: "Password123"

@@ -16,7 +16,8 @@
     "prebuild": "rm -rf dist",
     "build": "tsc -p ./",
     "start": "env NODE_ENV=production node dist/server.js",
-    "test": "env NODE_ENV=test jest"
+    "test": "env NODE_ENV=test jest",
+    "load:test": "artillery run artillery.yml"
   },
   "dependencies": {
     "artillery": "^2.0.1",
