@@ -1,0 +1,31 @@
+version: "3"
+
+services:
+  api-service:
+    image: api-service
+    container_name: api-service
+    environment:
+      - NODE_ENV=development
+    build:
+      context: ..
+      dockerfile: dockerfiles/Dockerfile.dev
+    volumes:
+      - ../public:/srv/node/public
+      - ../src:/srv/node/src
+      - type: bind
+        source: ../.env
+        target: /srv/node/.env
+      - type: bind
+        source: ../jest.config.js
+        target: /srv/node/.jest.config.js
+      - type: bind
+        source: ../nodemon.json
+        target: /srv/node/nodemon.json
+      - type: bind
+        source: ../tsconfig.json
+        target: /srv/node/tsconfig.json
+    expose:
+      - "4000"
+    ports:
+      - "4000:4000"
+    command: yarn dev

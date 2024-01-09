@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  tests:
+    image: api-service
+    container_name: api-service
+    environment:
+      - NODE_ENV=test
+    build:
+      context: ..
+      dockerfile: dockerfiles/Dockerfile.test
+    command: yarn test
+    volumes:
+      - type: bind
+        source: ../.env
+        target: /tests/.env

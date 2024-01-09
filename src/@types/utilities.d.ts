@@ -10,4 +10,18 @@ type AuthenticatedRequest<
   Locals extends Record<string, any> = Record<string, any>
 > = import("express").Request<P, ResBody, ReqBody, ReqQuery, Locals> & {
   user?: UserDocument;
+  company?: CompanyDocument;
+  track?: (opts?: {
+    trackName?: string;
+    distinctId?: string;
+    data?: import("mixpanel").PropertyDict;
+  }) => void;
 };
+
+type Prettify<T> = {
+  [K in keyof T]: T[K];
+} & {};
+
+type ParsedQs = Prettify<import("qs").ParsedQs> & { event?: string };
+
+type PaginationQs = ParsedQs & { limit?: number; skip?: skip };

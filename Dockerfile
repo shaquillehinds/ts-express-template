@@ -1,0 +1,16 @@
+FROM omegareizo/ubuntu-node:n18-u22-v1
+
+WORKDIR /srv/node
+
+COPY yarn.lock ./
+COPY package*.json ./
+
+RUN yarn install
+
+COPY ./ ./
+
+RUN yarn build
+
+EXPOSE 4000
+
+CMD ["yarn", "start"]

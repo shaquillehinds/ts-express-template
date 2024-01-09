@@ -1,4 +1,4 @@
-import { Model } from "mongoose";
+import { Model, ObjectId } from "mongoose";
 
 export type UserModel = Model<IUser, {}, IUserMethods>;
 
@@ -7,7 +7,11 @@ export interface IUserMethods {
 }
 
 export interface IUser {
-  name: string;
+  _id: ObjectId;
+  image: string;
   email: string;
-  password: string;
+  phone: string;
+  firstName: string;
+  lastName: string;
+  password?: string;
 }
