@@ -11,7 +11,6 @@
   "scripts": {
     "docker:dev": "docker compose -f dockerfiles/docker-compose.dev.yml up --build",
     "docker:test": "docker-compose -f dockerfiles/docker-compose.test.yml run --build --rm tests",
-    "docker:stripe:listen": "docker-compose -f dockerfiles/docker-compose.stripe.listen.yml up",
     "dev": "cross-env NODE_ENV=development nodemon src/server.ts -L",
     "dev:prod": "cross-env NODE_ENV=production nodemon src/server.ts -L",
     "prebuild": "rm -rf dist",
